@@ -639,3 +639,246 @@ img{max-width:100%;}
     text-align:center;
   }
 }
+/* ============================= */
+/* ADAPTACIÓN PARA CELULARES */
+/* ============================= */
+
+@media (max-width: 700px){
+
+  .page{
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 5px;
+  }
+
+  .logo-circle{
+    flex-shrink: 0;
+  }
+
+  .logo-circle img{
+    width: 45px;
+    height: 45px;
+  }
+
+  .header nav{
+    width: 100%;
+    order: 3;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .header nav a{
+    font-size: 12px;
+  }
+
+  .team-badge{
+    order: 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team-badge-crest img{
+    width: 45px;
+    height: 45px;
+  }
+
+  .team-badge-name{
+    font-size: 18px;
+  }
+
+  .brand{
+    display: none;
+  }
+
+
+  /* ============================= */
+  /* CONTENIDO */
+  /* ============================= */
+
+  .lineup-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* CANCHA */
+  .pitch{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pitch-bg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Jugadores */
+  .player-circle{
+    width: clamp(42px, 12vw, 65px);
+    height: clamp(42px, 12vw, 65px);
+  }
+
+  .player-label{
+    font-size: clamp(9px, 2.8vw, 14px);
+    padding: 2px 5px;
+    white-space: nowrap;
+  }
+
+  .captain-badge{
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    right: -4px;
+    top: -2px;
+  }
+
+
+  /* ============================= */
+  /* PARTE DERECHA */
+  /* ============================= */
+
+  .squad-side{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .banner-heading{
+    width: 100%;
+    font-size: clamp(24px, 8vw, 38px);
+    padding: 5px;
+    text-align: center;
+  }
+
+  .kits-row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .kits-row img{
+    width: 30%;
+    max-width: 110px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .subs-row{
+    width: 100%;
+  }
+
+  .subs-block{
+    width: 100%;
+  }
+
+  .coach-line{
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .subs-list{
+    columns: 2;
+    column-gap: 20px;
+    padding: 5px 15px;
+  }
+
+  .subs-list li{
+    font-size: 14px;
+    margin-bottom: 4px;
+    break-inside: avoid;
+  }
+
+
+  /* ============================= */
+  /* FOOTER */
+  /* ============================= */
+
+  .footer{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 5px;
+    text-align: center;
+  }
+
+  .footer-left{
+    width: 100%;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .footer-brands{
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-brands img{
+    max-width: 35px;
+    max-height: 25px;
+  }
+
+  .footer-right{
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
+  }
+}
+
+
+/* ============================= */
+/* CELULARES PEQUEÑOS */
+/* ============================= */
+
+@media (max-width: 400px){
+
+  .header nav{
+    gap: 6px 10px;
+  }
+
+  .header nav a{
+    font-size: 10px;
+  }
+
+  .team-badge-name{
+    font-size: 15px;
+  }
+
+  .player-circle{
+    width: 42px;
+    height: 42px;
+  }
+
+  .player-label{
+    font-size: 8px;
+  }
+
+  .subs-list{
+    columns: 1;
+  }
+
+  .subs-list li{
+    font-size: 13px;
+  }
+
+}
