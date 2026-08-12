@@ -92,7 +92,7 @@ img{max-width:100%;}
   color:var(--white);
   text-decoration:none;
   font-weight:bold;
-  font-size:clamp(35px,11vw,42px);
+  font-size:clamp(25px,9vw,36px);
   letter-spacing:.01em;
   white-space:nowrap;
   padding:6px 10px;
@@ -619,5 +619,230 @@ img{max-width:100%;}
   .footer{
     justify-content:center;
     text-align:center;
+  }
+}
+/* ==========================================================
+   AJUSTE RESPONSIVE FINAL
+   No modifica la estructura existente
+   ========================================================== */
+
+/* ---------- COMPUTADORA ---------- */
+@media (min-width: 701px){
+
+  .header{
+    flex-wrap:nowrap;
+  }
+
+  .header nav{
+    order:initial;
+    width:auto;
+  }
+
+  .header nav a{
+    font-size:clamp(24px,3vw,42px);
+  }
+
+  .content{
+    grid-template-columns:minmax(280px,380px) 1fr;
+  }
+
+  .player-photo{
+    margin-left:20px;
+  }
+
+  .player-name{
+    font-size:clamp(16px,2vw,28px);
+  }
+
+  .team-name{
+    font-size:clamp(14px,1.8vw,24px);
+  }
+}
+
+
+/* ---------- TABLET ---------- */
+@media (max-width: 700px){
+
+  .header{
+    padding:10px 14px;
+    gap:8px;
+  }
+
+  .header .logo-circle{
+    width:50px;
+    height:50px;
+  }
+
+  .header .brand img.pl-logo{
+    height:45px;
+  }
+
+  .header nav{
+    width:100%;
+    order:3;
+    gap:8px;
+  }
+
+  .header nav a{
+    font-size:20px;
+    padding:5px 7px;
+  }
+
+  .stat-tabs{
+    gap:8px;
+    padding:10px;
+  }
+
+  .stat-tabs .tab{
+    font-size:16px;
+    padding:9px 6px;
+  }
+
+  .stat-tabs .tab.wide{
+    font-size:17px;
+  }
+
+  .content{
+    grid-template-columns:1fr;
+    padding:8px 10px 15px;
+  }
+
+  .featured .caption{
+    font-size:22px;
+    padding:14px 10px;
+  }
+
+  .player-photo{
+    width:65px;
+    height:65px;
+    margin-left:0;
+  }
+
+  .player-name{
+    font-size:17px;
+    padding-left:5px;
+  }
+
+  .team-name{
+    font-size:15px;
+  }
+
+  .team-crest{
+    width:48px;
+    height:48px;
+    padding-right:4px;
+  }
+
+  .stat-badge{
+    gap:5px;
+    padding:6px 10px;
+  }
+
+  .stat-badge .stat-icon{
+    width:24px;
+    height:24px;
+  }
+
+  .stat-badge span{
+    font-size:18px;
+  }
+}
+
+
+/* ---------- CELULAR ---------- */
+@media (max-width: 560px){
+
+  .header{
+    padding:8px 10px;
+  }
+
+  .header .logo-circle{
+    width:42px;
+    height:42px;
+  }
+
+  .header .brand img.pl-logo{
+    height:38px;
+  }
+
+  .header nav{
+    gap:4px;
+    padding:6px 4px;
+  }
+
+  .header nav a{
+    font-size:16px;
+    padding:4px 5px;
+  }
+
+  .stat-tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+  }
+
+  .stat-tabs .tab,
+  .stat-tabs .tab.wide,
+  .stat-tabs .tab.narrow{
+    flex:none;
+    width:100%;
+    min-width:0;
+    font-size:14px;
+    padding:8px 5px;
+  }
+
+  .content{
+    padding:6px 6px 12px;
+  }
+
+  .featured .photo-frame{
+    max-height:280px;
+  }
+
+  .featured .caption{
+    font-size:18px;
+    padding:10px 8px;
+  }
+
+  /* Quita el desplazamiento de 80px en celular */
+  .player-photo{
+    width:55px;
+    height:55px;
+    margin-left:0;
+  }
+
+  .player-name{
+    font-size:14px;
+    padding-left:2px;
+  }
+
+  .team-name{
+    font-size:13px;
+  }
+
+  .team-crest{
+    width:40px;
+    height:40px;
+    padding-right:2px;
+  }
+
+  .stat-badge{
+    gap:4px;
+    padding:5px 8px;
+    border-width:2px;
+  }
+
+  .stat-badge .stat-icon{
+    width:21px;
+    height:21px;
+  }
+
+  .stat-badge span{
+    font-size:16px;
+  }
+
+  .footer{
+    font-size:13px;
+    padding:10px;
   }
 }

@@ -50,7 +50,6 @@ header{
   flex-wrap: wrap;
   gap: 12px;
 }
-
 .logo-area{
   display:flex;
   align-items:center;
@@ -73,11 +72,20 @@ nav a{
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
-  font-size: clamp(16px, 2.4vw, 26px);
+  font-size: clamp(25px, 9vw, 36px);
   letter-spacing: 0.5px;
   white-space: nowrap;
+
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: all .2s ease;
 }
 
+nav a:hover{
+  border-color: #ff4fa3;
+  background-color: rgba(255,79,163,.08);
+}
 .pl-brand{
   display:flex;
   align-items:center;
