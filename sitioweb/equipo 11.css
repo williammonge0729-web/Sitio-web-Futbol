@@ -167,6 +167,12 @@
   .top-row{
     flex-direction: column;
   }
+  /* AGREGAR ESTO */
+  .banner-card,
+  .relegation-card{
+    flex-grow: 0;
+    width: 100%;
+  }
   .coach-info{
     flex-direction: column;
     align-items: center;
