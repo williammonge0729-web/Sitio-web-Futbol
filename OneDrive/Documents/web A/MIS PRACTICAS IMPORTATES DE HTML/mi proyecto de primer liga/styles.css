@@ -4,7 +4,7 @@ html, body {
     padding: 0 !important;
     width: 100% !important;
     min-height: 100vh !important;
-    overflow-x: hidden; /* Evita desplazamientos horizontales innecesarios */
+    overflow-x: hidden;
 }
 
 * {
@@ -22,27 +22,30 @@ html, body {
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0 !important;
-    box-shadow: none !important; /* Quita sombras que crean el efecto de estar flotando */
+    box-shadow: none !important;
     background-color: #ffffff;
     position: relative;
-
+    overflow-x: hidden;
 }
  
 /* --- NAVBAR / HEADER --- */
 .navbar {
     background: linear-gradient(90deg, #4e0229 15%, #3f0470 100%); 
     color: #ffffff;
-    padding: 12px 24px;
+    padding: clamp(8px, 1.2vw, 12px) clamp(12px, 2vw, 24px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 5px solid #ff007f; 
+    flex-wrap: wrap;
+    gap: 10px;
 }
  
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: clamp(10px, 2.5vw, 35px);
+    flex-wrap: wrap;
 }
  
 .brand-logo-box {
@@ -56,31 +59,34 @@ html, body {
 }
  
 .brand-logo-img {
-    height: 35px !important;  /* Esto controla el alto real del logo en pantalla */
-    width: auto !important;    /* Mantiene la proporción horizontal exacta */
+    height: clamp(22px, 2.8vw, 35px) !important;
+    width: auto !important;
     object-fit: contain !important;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important; /* Resalta el logo sin perder detalles */
 }
  
- 
-/* --- MENÚ EN TAMAÑO GRANDE E INTERACTIVO --- */
+/* --- MENÚ INTERACTIVO --- */
 .nav-menu ul {
     display: flex;
     list-style: none;
-    gap: 15px; 
+    gap: clamp(6px, 1vw, 15px); 
+    align-items: center;
+    flex-wrap: wrap;
 }
  
 .nav-menu ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 18px; 
+    font-size: clamp(11px, 1.2vw, 18px); 
     font-weight: 800;
     letter-spacing: 0.5px;
-    padding: 10px 20px; 
+    padding: clamp(6px, 0.8vw, 10px) clamp(10px, 1.4vw, 20px); 
     border-radius: 8px; 
     transition: all 0.3s ease; 
+    white-space: nowrap;
 }
  
-/* Efecto al pasar el mouse (Hover) */
+/* Efecto Hover */
 .nav-menu ul li a:hover {
     background-color: #ff007f; 
     color: #ffffff;
@@ -88,57 +94,70 @@ html, body {
     box-shadow: 0 5px 15px rgba(255, 0, 127, 0.5); 
 }
  
-/* Efecto para el botón que está seleccionado actualmente */
+/* Efecto Activo */
 .nav-menu ul li a.active {
     background-color: #ff007f;
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(255, 0, 127, 0.3);
 }
- 
+
+/* BOTÓN EXTERNO FLOTANTE */
+.nav-menu ul li a.btn-external {
+    background: linear-gradient(135deg, #ff007f 0%, #7f00ff 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(255, 0, 127, 0.4);
+    animation: float 3s ease-in-out infinite;
+}
+
+.nav-menu ul li a.btn-external:hover {
+    transform: translateY(-5px) scale(1.03) !important;
+    box-shadow: 0 8px 20px rgba(255, 0, 127, 0.7) !important;
+}
  
 .league-title {
-    font-size: 26px;
+    font-size: clamp(14px, 2vw, 26px);
     font-weight: 800;
 }
  
 .league-icon {
-    width: 45px;
+    width: clamp(28px, 3.2vw, 45px);
     height: auto;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important; /* Mantiene la visibilidad nítida */
 }
  
-/* --- CUERPO EN 3 COLUMNAS MÁGICAS --- */
+/* --- CUERPO EN 3 COLUMNAS --- */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: 260px 1fr 240px;
-    gap: 20px;
-    padding: 25px;
+    grid-template-columns: minmax(130px, 22vw) minmax(260px, 1fr) minmax(120px, 20vw);
+    gap: clamp(8px, 1.5vw, 20px);
+    padding: clamp(8px, 2vw, 25px);
     background-color: #ffffff;
     align-items: start;
+    width: 100%;
 }
  
-/* Mantiene la distribución automática de arriba a abajo alineado a la tabla */
 .standard-col-height {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 20px;
+    gap: clamp(8px, 1.5vw, 20px);
 }
  
 /* --- TARJETA CAMPEÓN --- */
 .card-champion {
     border: 3px solid #d4af37; 
     border-radius: 12px;
-    padding: 12px;
+    padding: clamp(6px, 1vw, 12px);
     background: #ffffff;
 }
  
 .photo-frame {
     width: 100%;
-    height: 155px;
+    height: clamp(75px, 12vw, 155px);
     background-color: #eaeaea;
     border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 12px;
+    margin-bottom: clamp(6px, 1vw, 12px);
 }
  
 .photo-img {
@@ -149,14 +168,14 @@ html, body {
  
 .banner-champion {
     text-align: center;
-    margin: 10px 0;
+    margin: clamp(4px, 0.8vw, 10px) 0;
     border: 3px solid #d4af37;
-    padding: 5px 0;
+    padding: clamp(2px, 0.4vw, 5px) 0;
 }
  
 .banner-champion h2 {
     color: #bfa15f; 
-    font-size: 22px;
+    font-size: clamp(11px, 1.5vw, 22px);
     font-weight: 900;
     line-height: 1.2;
 }
@@ -164,18 +183,20 @@ html, body {
 .badge-champion-box {
     display: flex;
     justify-content: center;
-    padding: 10px 0;
+    padding: clamp(4px, 0.8vw, 10px) 0;
 }
  
 .badge-lg {
-    max-height: 110px;
+    max-height: clamp(45px, 8vw, 110px);
     width: auto;
+    animation: float 3.5s ease-in-out infinite;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
 }
  
 /* --- BLOQUES DE INFORMACIÓN EXTRA --- */
 .card-info-extra {
     border-radius: 12px;
-    padding: 14px;
+    padding: clamp(8px, 1.1vw, 14px);
     background: #ffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
@@ -189,21 +210,21 @@ html, body {
 }
  
 .extra-title {
-    font-size: 13px;
+    font-size: clamp(9px, 1vw, 13px);
     font-weight: 800;
     text-align: center;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
+    margin-bottom: clamp(4px, 0.8vw, 10px);
+    padding-bottom: clamp(3px, 0.5vw, 6px);
     border-bottom: 1px solid #eee;
     color: #222;
 }
  
 .extra-list {
     list-style: none;
-    font-size: 12px;
+    font-size: clamp(8px, 0.9vw, 12px);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(4px, 0.6vw, 8px);
     color: #444;
 }
  
@@ -215,12 +236,14 @@ html, body {
 /* --- COLUMNA CENTRAL (TABLA) --- */
 .table-responsive {
     width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
  
 .leaderboard-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 13px;
+    font-size: clamp(9px, 1vw, 13px);
     color: #000000;
 }
  
@@ -228,17 +251,18 @@ html, body {
     background-color: #ffffff;
     color: #000000;
     font-weight: 700;
-    padding: 10px 6px;
+    padding: clamp(4px, 0.8vw, 10px) clamp(2px, 0.5vw, 6px);
     border: 1px solid #cccccc;
+    white-space: nowrap;
 }
  
 .leaderboard-table th.text-left {
     text-align: left;
-    padding-left: 12px;
+    padding-left: clamp(4px, 1vw, 12px);
 }
  
 .leaderboard-table td {
-    padding: 8px 6px;
+    padding: clamp(4px, 0.6vw, 8px) clamp(2px, 0.5vw, 6px);
     border: 1px solid #cccccc;
     text-align: center;
     background-color: #ffffff;
@@ -247,20 +271,40 @@ html, body {
 .leaderboard-table tr:nth-child(even) td {
     background-color: #f9f9f9; 
 }
+
+.leaderboard-table tbody tr {
+    transition: all 0.25s ease-in-out;
+}
+
+.leaderboard-table tbody tr:hover {
+    transform: translateY(-2px);
+    outline: 2px solid #00a2ff;
+    box-shadow: 0 0 15px rgba(0, 162, 255, 0.8);
+    position: relative;
+    z-index: 5;
+}
+
+.leaderboard-table tbody tr:hover td {
+    background-color: #ffffff;
+    border-color: #00a2ff;
+}
  
 .team-identity {
     text-align: left !important;
-    padding-left: 12px !important;
+    padding-left: clamp(4px, 1vw, 12px) !important;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: clamp(3px, 0.6vw, 8px);
+    white-space: nowrap;
 }
  
 .team-mini-badge {
-    width: 20px;
-    height: 20px;
+    width: clamp(12px, 1.5vw, 20px);
+    height: clamp(12px, 1.5vw, 20px);
     object-fit: contain;
+    flex-shrink: 0;
+    filter: none !important;
 }
  
 .fw-bold {
@@ -272,16 +316,16 @@ html, body {
     background-color: #7f00ff; 
     color: #ffffff;
     font-weight: 700;
-    font-size: 14px;
+    font-size: clamp(9px, 1.1vw, 14px);
     text-align: center;
-    padding: 8px;
+    padding: clamp(4px, 0.6vw, 8px);
     border-radius: 6px;
 }
  
 .card-ascended {
     border: 3px solid #ff007f; 
     border-radius: 16px;
-    padding: 15px;
+    padding: clamp(6px, 1.1vw, 15px);
     background: #ffffff;
 }
  
@@ -289,184 +333,121 @@ html, body {
     background: linear-gradient(90deg, #4e0229 15%, #3f0470 100%);
     color: #ffffff;
     text-align: center;
-    font-size: 11px;
+    font-size: clamp(8px, 0.9vw, 11px);
     font-weight: 700;
-    padding: 6px;
+    padding: clamp(3px, 0.5vw, 6px);
     border-radius: 4px;
-    margin-bottom: 15px;
+    margin-bottom: clamp(6px, 1vw, 15px);
 }
  
 .ascended-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: clamp(6px, 1.2vw, 18px) 0;
 }
  
 .ascended-team{
-    display:flex;
-    align-items:center;
-    gap:12px;
+    display: flex;
+    align-items: center;
+    gap: clamp(4px, 0.8vw, 12px);
 }
  
 .ascended-team img{
-    width:55px;
-    height:55px;
-    object-fit:contain;
+    width: clamp(24px, 4vw, 55px);
+    height: clamp(24px, 4vw, 55px);
+    object-fit: contain;
+    filter: none !important;
 }
  
 .ascended-team span{
-    font-size:18px;
-    font-weight:800;
-    line-height:1.1;
+    font-size: clamp(9px, 1.3vw, 18px);
+    font-weight: 800;
+    line-height: 1.1;
 }
  
 .arrow-green{
-    color:#00e64d;
-    font-size:34px;
-    font-weight:bold;
+    color: #00e64d;
+    font-size: clamp(16px, 2.5vw, 34px);
+    font-weight: bold;
 }
  
 /* --- FOOTER --- */
 .footer-bar {
     background: linear-gradient(90deg, #4e0229 15%, #3f0470 100%);
     color: #ffffff;
-    padding: 15px 25px;
+    padding: clamp(8px, 1.2vw, 15px) clamp(12px, 2vw, 25px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 11px;
+    font-size: clamp(8px, 0.9vw, 11px);
     border-top: 5px solid #ff007f;
+    flex-wrap: wrap;
+    gap: 10px;
 }
  
 .footer-brands {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(8px, 1.5vw, 20px);
+    flex-wrap: wrap;
 }
+
 .brand-icon-fa {
-    font-size: 28px;
-    color: #ffffff;
-    opacity: 0.8;
+    font-size: clamp(16px, 2vw, 28px);
+    opacity: 1;
 }
  
 .brand-icon-img {
-    height: 18px;
+    height: clamp(12px, 1.4vw, 18px);
     width: auto;
-    filter: brightness(0) invert(1);
+    filter: none !important;
     vertical-align: middle;
     margin: 0 6px;
 }
  
 .league-icon {
-    height: 70px;
+    height: clamp(35px, 5vw, 70px);
     width: auto;
-    filter: brightness(0) invert(1);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) !important;
 }
+
 .ascended-logo{
-    width:55px;
-    height:55px;
-    object-fit:contain;
-    flex-shrink:0;
+    width: clamp(24px, 4vw, 55px);
+    height: clamp(24px, 4vw, 55px);
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: none !important;
 }
-/* --- AJUSTE ESPECÍFICO PARA EL LOGO DE PUMA --- */
+
+/* --- LOGOS ESPECÍFICOS --- */
 img[title="Puma"] {
-    height: 40px !important; /* Puedes subir o bajar este número hasta que quede perfecto */
+    height: clamp(20px, 3vw, 40px) !important; 
     width: auto;
     vertical-align: middle;
-    margin-left: 15px; /* Le da un poco de respiración respecto a los otros íconos */
+    margin-left: clamp(4px, 1vw, 15px); 
+    filter: none !important;
 }
-/* --- AJUSTE ESPECÍFICO PARA EL LOGO DE MICROSOFT --- */
+
 img[title="Microsoft"] {
-    filter: none !important; /* Esto elimina el filtro blanco y devuelve el color original */
-    height: 22px !important; /* Puedes ajustar este número para que el tamaño encaje perfecto con los demás */
+    filter: none !important; 
+    height: clamp(12px, 1.8vw, 22px) !important; 
     width: auto;
     vertical-align: middle;
 }   
- 
 
-
-
-/**FINALIZACION DE PAGINA DE arsenal1***/
-
-
-/* SECCIÓN SUPERIOR */
-.top-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    margin-bottom: 30px;
-    align-items: stretch; /* Alinea las alturas de ambas columnas */
+/* --- ANIMACIÓN FLOTANTE --- */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+    100% { transform: translateY(0px); }
 }
 
-.hero-image-container {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 100%; /* Ajusta la altura al mismo tamaño que la tarjeta derecha */
-}
-
-.hero-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Llena todo el contenedor estirándose perfectamente */
-    display: block;
-}
-
-.hero-title-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 1.3rem;
-}
-
-/* TARJETA DE DESCENSO */
-.relegation-card {
-    background-color: white;
-    border: 2px solid #b71c1c;
-    border-radius: 8px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.relegation-card h3 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #111;
-    margin-bottom: 8px;
-}
-
-.relegation-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.relegation-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #000;
-}
-
-.rel-icon, .rel-badge {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-}
-
-.relegation-text {
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: #111;
-    margin-top: 8px;
+/* --- AJUSTE PROPORCIONAL PARA PANTALLAS MUY PEQUEÑAS --- */
+@media screen and (max-width: 600px) {
+    .dashboard-grid {
+        grid-template-columns: minmax(95px, 23vw) minmax(160px, 1fr) minmax(90px, 21vw);
+        gap: 5px;
+        padding: 5px 2px;
+    }
 }
