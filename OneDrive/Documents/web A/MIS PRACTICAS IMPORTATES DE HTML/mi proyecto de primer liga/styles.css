@@ -1,0 +1,472 @@
+/* --- RESET TOTAL DE PANTALLA --- */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden; /* Evita desplazamientos horizontales innecesarios */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* --- CONTENEDOR PRINCIPAL PEGADO A LOS BORDES --- */
+.canvas-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important; /* Quita sombras que crean el efecto de estar flotando */
+    background-color: #ffffff;
+    position: relative;
+
+}
+ 
+/* --- NAVBAR / HEADER --- */
+.navbar {
+    background: linear-gradient(90deg, #4e0229 15%, #3f0470 100%); 
+    color: #ffffff;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #ff007f; 
+}
+ 
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+ 
+.brand-logo-box {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+}
+ 
+.brand-logo-img {
+    height: 35px !important;  /* Esto controla el alto real del logo en pantalla */
+    width: auto !important;    /* Mantiene la proporción horizontal exacta */
+    object-fit: contain !important;
+}
+ 
+ 
+/* --- MENÚ EN TAMAÑO GRANDE E INTERACTIVO --- */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 15px; 
+}
+ 
+.nav-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px; 
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    transition: all 0.3s ease; 
+}
+ 
+/* Efecto al pasar el mouse (Hover) */
+.nav-menu ul li a:hover {
+    background-color: #ff007f; 
+    color: #ffffff;
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(255, 0, 127, 0.5); 
+}
+ 
+/* Efecto para el botón que está seleccionado actualmente */
+.nav-menu ul li a.active {
+    background-color: #ff007f;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(255, 0, 127, 0.3);
+}
+ 
+ 
+.league-title {
+    font-size: 26px;
+    font-weight: 800;
+}
+ 
+.league-icon {
+    width: 45px;
+    height: auto;
+}
+ 
+/* --- CUERPO EN 3 COLUMNAS MÁGICAS --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr 240px;
+    gap: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    align-items: start;
+}
+ 
+/* Mantiene la distribución automática de arriba a abajo alineado a la tabla */
+.standard-col-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+ 
+/* --- TARJETA CAMPEÓN --- */
+.card-champion {
+    border: 3px solid #d4af37; 
+    border-radius: 12px;
+    padding: 12px;
+    background: #ffffff;
+}
+ 
+.photo-frame {
+    width: 100%;
+    height: 155px;
+    background-color: #eaeaea;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+ 
+.photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.banner-champion {
+    text-align: center;
+    margin: 10px 0;
+    border: 3px solid #d4af37;
+    padding: 5px 0;
+}
+ 
+.banner-champion h2 {
+    color: #bfa15f; 
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+ 
+.badge-champion-box {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+ 
+.badge-lg {
+    max-height: 110px;
+    width: auto;
+}
+ 
+/* --- BLOQUES DE INFORMACIÓN EXTRA --- */
+.card-info-extra {
+    border-radius: 12px;
+    padding: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+ 
+.card-info-extra.gold-theme {
+    border: 3px solid #d4af37;
+}
+ 
+.card-info-extra.fuchsia-theme {
+    border: 3px solid #ff007f;
+}
+ 
+.extra-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+}
+ 
+.extra-list {
+    list-style: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #444;
+}
+ 
+.extra-list li {
+    display: flex;
+    justify-content: space-between;
+}
+ 
+/* --- COLUMNA CENTRAL (TABLA) --- */
+.table-responsive {
+    width: 100%;
+}
+ 
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: #000000;
+}
+ 
+.leaderboard-table th {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    padding: 10px 6px;
+    border: 1px solid #cccccc;
+}
+ 
+.leaderboard-table th.text-left {
+    text-align: left;
+    padding-left: 12px;
+}
+ 
+.leaderboard-table td {
+    padding: 8px 6px;
+    border: 1px solid #cccccc;
+    text-align: center;
+    background-color: #ffffff;
+}
+ 
+.leaderboard-table tr:nth-child(even) td {
+    background-color: #f9f9f9; 
+}
+ 
+.team-identity {
+    text-align: left !important;
+    padding-left: 12px !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+.team-mini-badge {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+ 
+.fw-bold {
+    font-weight: 700;
+}
+ 
+/* --- COLUMNA DERECHA --- */
+.tag-title-right {
+    background-color: #7f00ff; 
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+}
+ 
+.card-ascended {
+    border: 3px solid #ff007f; 
+    border-radius: 16px;
+    padding: 15px;
+    background: #ffffff;
+}
+ 
+.ascended-header {
+    background: linear-gradient(90deg, #4e0229 15%, #3f0470 100%);
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+ 
+.ascended-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:18px 0;
+}
+ 
+.ascended-team{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+ 
+.ascended-team img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+ 
+.ascended-team span{
+    font-size:18px;
+    font-weight:800;
+    line-height:1.1;
+}
+ 
+.arrow-green{
+    color:#00e64d;
+    font-size:34px;
+    font-weight:bold;
+}
+ 
+/* --- FOOTER --- */
+.footer-bar {
+    background: linear-gradient(90deg, #4e0229 15%, #3f0470 100%);
+    color: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    border-top: 5px solid #ff007f;
+}
+ 
+.footer-brands {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.brand-icon-fa {
+    font-size: 28px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+ 
+.brand-icon-img {
+    height: 18px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    vertical-align: middle;
+    margin: 0 6px;
+}
+ 
+.league-icon {
+    height: 70px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+.ascended-logo{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+/* --- AJUSTE ESPECÍFICO PARA EL LOGO DE PUMA --- */
+img[title="Puma"] {
+    height: 40px !important; /* Puedes subir o bajar este número hasta que quede perfecto */
+    width: auto;
+    vertical-align: middle;
+    margin-left: 15px; /* Le da un poco de respiración respecto a los otros íconos */
+}
+/* --- AJUSTE ESPECÍFICO PARA EL LOGO DE MICROSOFT --- */
+img[title="Microsoft"] {
+    filter: none !important; /* Esto elimina el filtro blanco y devuelve el color original */
+    height: 22px !important; /* Puedes ajustar este número para que el tamaño encaje perfecto con los demás */
+    width: auto;
+    vertical-align: middle;
+}   
+ 
+
+
+
+/**FINALIZACION DE PAGINA DE arsenal1***/
+
+
+/* SECCIÓN SUPERIOR */
+.top-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: stretch; /* Alinea las alturas de ambas columnas */
+}
+
+.hero-image-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%; /* Ajusta la altura al mismo tamaño que la tarjeta derecha */
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Llena todo el contenedor estirándose perfectamente */
+    display: block;
+}
+
+.hero-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+
+/* TARJETA DE DESCENSO */
+.relegation-card {
+    background-color: white;
+    border: 2px solid #b71c1c;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.relegation-card h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.relegation-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.relegation-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000;
+}
+
+.rel-icon, .rel-badge {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.relegation-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #111;
+    margin-top: 8px;
+}

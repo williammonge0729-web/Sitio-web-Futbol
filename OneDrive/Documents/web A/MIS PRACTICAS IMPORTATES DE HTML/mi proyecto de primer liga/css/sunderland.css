@@ -1,0 +1,409 @@
+/* RESET GENERAL Y 100% ANCHO */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background-color: #ffffff;
+}
+
+/* ================= HEADER (#4E0229 Y #3F0470) ================= */
+.header {
+    background: linear-gradient(to right, #4E0229 15%, #3F0470 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-premier img {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus,
+.nav-menu a.active {
+    background-color: #e6007e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    transform: translateY(-1px);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-right h1 {
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.team-logo {
+    height: 65px; 
+    object-fit: contain;
+}
+
+.league-logo {
+    height: 55px; 
+    filter: brightness(0) invert(1); 
+    margin-left: 10px; 
+}
+
+/* ================= SECCIÓN SUPERIOR ================= */
+.top-section {
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+    align-items: stretch;
+}
+
+/* CUADRO DE IMAGEN DE ESTADIO */
+.hero-image-container {
+    flex: 2.2;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 280px;
+    display: flex;
+}
+
+.hero-bg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center;
+    display: block !important;
+}
+
+/* ===== TARJETA DE DESCENSO ===== */
+.relegation-card {
+    flex: 1;
+    border: 3px solid #e60000;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 280px;
+    background-color: #fff;
+    padding: 0 !important;
+    display: flex;
+}
+
+.relegation-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.relegation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+}
+
+.relegation-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.relegation-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.red-arrow {
+    font-size: 2.8rem;
+    color: #e60000;
+}
+
+.relegation-number {
+    font-size: 4.8rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+}
+
+.relegation-team-logo {
+    height: 65px;
+    object-fit: contain;
+}
+
+.relegation-text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.3;
+}
+
+/* ================= SECCIÓN TÍTULOS ================= */
+.titles-section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    padding: 0 15px 15px 15px;
+}
+
+.title-card {
+    border: 3px solid;
+    padding: 10px 8px;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 115px;
+}
+
+.border-purple { border-color: #6a0dad; }
+.border-red    { border-color: #e60000; }
+.border-green  { border-color: #009900; }
+
+.title-card h4 {
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 6px;
+    min-height: 22px;
+}
+
+.title-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.title-number {
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.title-content img {
+    height: 55px;
+    max-width: 55px;
+    object-fit: contain;
+}
+
+/* ================= SECCIÓN INFORMACIÓN ================= */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 0 15px 15px 15px;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.info-text {
+    font-size: 0.85rem;
+    color: #111;
+    line-height: 1.3;
+}
+
+.coach-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* ===== BOTÓN ALINEACIÓN (EFECTO FLOTANTE) ===== */
+.lineup-btn {
+    background-color: #00c853;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.lineup-btn:hover {
+    background-color: #00e676;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 200, 83, 0.5);
+}
+
+.lineup-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 200, 83, 0.4);
+}
+
+/* ================= FOOTER (#4E0229 Y #3F0470) ================= */
+.footer {
+    background: linear-gradient(to right, #4E0229 15%, #3F0470 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+}
+
+.footer-email {
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.footer-brands {
+    display: flex;
+    gap: 16px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.brand-icon-fa {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.brand-icon-img {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-icon-img.invert {
+    filter: brightness(0) invert(1);
+}
+
+.footer-copyright {
+    text-align: right;
+    color: #ccc;
+    font-size: 0.75rem;
+    line-height: 1.25;
+}
+
+/* ================= REGULACIÓN PARA CELULARES Y PANTALLAS PEQUEÑAS ================= */
+@media (max-width: 768px) {
+    /* Header apilado */
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .header-left, .header-right {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        margin-right: 5px;
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+
+    /* Imagen del Estadio y Tarjeta de Descenso vertical */
+    .top-section {
+        flex-direction: column;
+    }
+
+    /* Solución al espacio blanco: Alturas fijas en móviles */
+    .hero-image-container {
+        width: 100%;
+        height: 200px !important;
+    }
+
+    .relegation-card {
+        width: 100%;
+        height: 250px !important;
+    }
+
+    /* Títulos en 2 columnas */
+    .titles-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* 3 Fotos inferiores en una sola columna */
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card img {
+        height: 220px;
+    }
+
+    /* Pie de página ordenado */
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
+}
