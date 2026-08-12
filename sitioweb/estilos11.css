@@ -1,0 +1,641 @@
+/* ===========================================================
+   Tabla de Posiciones — Premier League
+   Hoja de estilos: Máximos Goleadores (responsive, full-bleed)
+   =========================================================== */
+
+:root{
+  --purple-950:#2b0d3f;
+  --purple-900:#3a1257;
+  --purple-800:#4a1a6e;
+
+  /* Colores combinados de las pestañas (más vivos/brillantes) */
+  --tab-blue:#7c3aed;        /* Violeta vivo */
+  --tab-blue-light:#a855f7;  /* Púrpura brillante */
+  --tab-maroon:#4a1942;      /* (sin usar por ahora, todas las pestañas comparten el mismo color) */
+  --tab-maroon-light:#6a2560;
+
+  --gold:#f2c94c;
+  --white:#ffffff;
+  --line:#e7dff0;
+  --text-dark:#2b0d3f;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+body{
+  background:var(--purple-950);
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  color:var(--text-dark);
+  min-height:100vh;
+}
+
+.page{
+  width:100%;
+  min-height:100vh;
+  margin:0 auto;
+  background:var(--white);
+  display:flex;
+  flex-direction:column;
+}
+
+img{max-width:100%;}
+
+/* ---------- Header ---------- */
+
+.header{
+  background:linear-gradient(100deg,var(--purple-950) 0%,var(--purple-900) 55%,var(--purple-800) 100%);
+  padding:clamp(8px,2vw,12px) clamp(14px,4vw,28px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.header .logo-circle{
+  width: clamp(55px, 6vw, 70px);
+  height: clamp(55px, 6vw, 70px);
+  border-radius:50%;
+  background:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:none;
+  overflow:hidden;
+}
+
+.header .logo-circle img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.header nav{
+  display:flex;
+  gap:clamp(18px,4vw,40px);
+  flex:1;
+  justify-content:center;
+  flex-wrap:wrap;
+  order:3;
+  width:100%;
+}
+
+.header nav a{
+  color:var(--white);
+  text-decoration:none;
+  font-weight:bold;
+  font-size:clamp(35px,11vw,42px);
+  letter-spacing:.01em;
+  white-space:nowrap;
+  padding:6px 10px;
+  border-radius:8px;
+  border:2px solid transparent;
+  transition:border-color .15s ease, background-color .15s ease;
+}
+
+.header nav a:hover{
+  border-color:#ff4fa3;
+  background-color:rgba(255,79,163,.08);
+}
+
+@media (max-width:700px){
+  .header nav{
+    background:rgba(255,255,255,.08);
+    border-radius:12px;
+    padding:10px 8px;
+    margin-top:4px;
+    gap:14px;
+  }
+  .header nav a{
+    font-size:clamp(15px,4vw,18px);
+  }
+}
+
+.header .brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.header .team-badge{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(0,0,0,.28);
+  padding:6px 16px;
+  border-radius:8px;
+  flex:none;
+}
+
+.header .team-badge .team-badge-crest{
+  width:clamp(32px,4.5vw,43px);
+  height:clamp(32px,4.5vw,43px);
+  flex:none;
+}
+
+.header .team-badge .team-badge-crest img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.header .team-badge .team-badge-name{
+  color:var(--white);
+  font-weight:800;
+  font-size:clamp(38px, 3vw, 45px);
+  white-space:nowrap;
+}
+
+.header .brand img.pl-logo{
+   height: clamp(45px, 5vw, 60px);
+  width:auto;
+  object-fit:contain;
+}
+
+.header .brand span.brand-text{
+  color:var(--white);
+  font-weight:bold;
+  font-size:19px;
+  line-height:1.05;
+  text-align:left;
+}
+
+.header .crown-icon img{
+  height:clamp(28px,3.5vw,38px);
+  width:auto;
+  object-fit:contain;
+}
+
+@media (min-width:701px){
+  .header nav{
+    order:initial;
+    width:auto;
+  }
+}
+
+/* ---------- Sub navegación (categorías de estadísticas) ---------- */
+
+.stat-tabs{
+  background:var(--white);
+  padding:clamp(10px,2.5vw,14px) clamp(14px,4vw,18px) 10px;
+  display:flex;
+  gap:10px;
+  align-items:stretch;
+  flex-wrap:wrap;
+}
+
+.stat-tabs .tab{
+  background:var(--tab-maroon);
+  color:var(--white);
+  border-radius:10px;
+  font-weight:bold;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 8px;
+  line-height:1.2;
+  font-size:13.5px;
+  transition:transform .15s ease, box-shadow .15s ease;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.stat-tabs .tab:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px -6px rgba(43,13,63,.5);
+}
+
+.stat-tabs .tab.blue{
+  background:linear-gradient(135deg,var(--tab-blue) 0%,var(--tab-blue-light) 100%);
+}
+
+.stat-tabs .tab.maroon{
+  background:linear-gradient(135deg,var(--tab-maroon) 0%,var(--tab-maroon-light) 100%);
+}
+
+.stat-tabs .tab.active{
+  border:2px solid var(--purple-950);
+  box-shadow:0 4px 10px -4px rgba(43,13,63,.5);
+}
+
+.stat-tabs .tab.wide{
+  flex:1 1 150px;
+  font-size:15px;
+}
+
+.stat-tabs .tab.narrow{
+  flex:1 1 120px;
+}
+
+@media (max-width:560px){
+  .stat-tabs .tab{
+    flex:1 1 45%;
+  }
+}
+
+/* ---------- Contenido principal ---------- */
+
+.content{
+  display:grid;
+  grid-template-columns:minmax(280px,380px) 1fr;
+  gap:clamp(14px,3vw,18px);
+  padding:6px clamp(14px,4vw,18px) 18px;
+  flex:1;
+  align-items:start;
+  margin-bottom:24px;   /* nuevo: separa el contenido del pie de página */
+}
+
+@media (max-width:700px){
+  .content{
+    grid-template-columns:1fr;
+  }
+}
+
+/* -- Columna izquierda: foto destacada -- */
+
+.featured{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.featured .photo-frame{
+  border:4px solid var(--tab-blue);
+  border-radius:14px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:#ddd;
+  width:100%;
+}
+
+@media (max-width:700px){
+  .featured .photo-frame{
+    aspect-ratio:16/9;
+    max-height:320px;
+  }
+}
+
+.featured .photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.featured .caption{
+  background:linear-gradient(135deg,var(--tab-blue) 0%,var(--tab-blue-light) 100%);
+  color:var(--white);
+  border-radius:8px;
+  padding:10px 12px;
+  text-align:center;
+  font-weight:bold;
+  font-size:13px;
+  line-height:1.4;
+}
+
+/* -- Columna derecha: tabla de jugadores -- */
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.scorers-table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:480px;
+  table-layout:fixed;
+}
+
+.scorers-table tr{
+  border-bottom:1px solid var(--line);
+}
+
+.scorers-table tr:last-child{
+  border-bottom:none;
+}
+
+.scorers-table td{
+  padding:clamp(6px,1.4vw,10px) 8px;
+  vertical-align:middle;
+}
+
+/* Columnas fijas y compactas; el nombre del jugador absorbe el espacio sobrante */
+.scorers-table td:nth-child(1){ width:clamp(60px,7vw,76px); padding-left:clamp(14px,2.5vw,22px); }
+.scorers-table td:nth-child(2){ width:auto; padding-left:14px; }
+.scorers-table td:nth-child(3){ width:clamp(90px,12vw,150px); }
+.scorers-table td:nth-child(4){ width:clamp(46px,6vw,58px); }
+.scorers-table td:nth-child(5){ width:clamp(90px,12vw,130px); }
+
+.player-photo{
+  width:clamp(50px,6vw,64px);
+  height:clamp(50px,6vw,64px);
+  border-radius:50%;
+  overflow:hidden;
+  background:#ddd;
+  flex:none;
+}
+
+.player-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.player-name{
+  font-weight:bold;
+  font-size:clamp(16px,2.1vw,19px);
+  color:var(--text-dark);
+  white-space:nowrap;
+}
+
+.team-name{
+  font-size:clamp(14px,1.9vw,17px);
+  color:var(--text-dark);
+  white-space:nowrap;
+}
+
+.team-crest{
+  width:clamp(38px,4.5vw,48px);
+  height:clamp(38px,4.5vw,48px);
+  flex:none;
+}
+
+.team-crest img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.stat-badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:8px 16px;
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(79,63,163,.12),rgba(106,86,201,.12));
+  border:1.5px solid var(--tab-blue-light);
+  margin-left:auto;
+  width:fit-content;
+}
+
+.stat-badge .stat-icon{
+  width:clamp(26px,3.4vw,32px);
+  height:clamp(26px,3.4vw,32px);
+  flex:none;
+  /* Tiñe el ícono (originalmente negro) hacia el morado de la paleta */
+  filter:invert(20%) sepia(45%) saturate(1200%) hue-rotate(220deg) brightness(85%);
+}
+
+.stat-badge span{
+  font-weight:bold;
+  font-size:clamp(20px,2.6vw,24px);
+  color:var(--text-dark);
+}
+
+/* ---------- Contenido pendiente (páginas que aún no tienen su diseño final) ---------- */
+
+.placeholder-content{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  color:#9c8fb3;
+  font-size:15px;
+  grid-column:1 / -1;
+}
+
+/* ---------- Alineación / Plantilla ---------- */
+
+.lineup-content{
+  grid-template-columns:1fr 1fr;   /* antes: 1.4fr 1fr */
+  align-items:start;
+}
+
+.pitch{
+  position:relative;
+  width:100%;
+  aspect-ratio:3/4;
+  border-radius:14px;
+  overflow:hidden;
+  border:4px solid var(--tab-blue);
+  background:#2f9e44;
+}
+
+.pitch .pitch-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.player-marker{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+}
+
+.player-circle{
+  position:relative;
+  width:clamp(67px,9vw,80px);    /* antes: clamp(44px,6.5vw,64px) */
+  height:clamp(67px,9vw,80px);   /* antes: clamp(44px,6.5vw,64px) */ 
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid #fff;
+  background:#ddd;
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+
+.player-circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.player-marker-with-captain{
+  position:relative;
+  display:inline-block;
+}
+
+.player-circle .captain-badge,
+.captain-badge{
+  position:absolute;
+  top:50%;
+  right:-21px;
+  transform:translateY(-50%);
+  width: 27px;
+  height:27px;
+  border-radius:50%;
+  background:#dc2626;
+  color:#fff;              /* nuevo: color de la letra */
+  font-size:18px;           /* nuevo: tamaño de la letra */
+  font-weight:800;          /* nuevo: negrita */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #fff;
+  padding-right: 2px;
+}
+
+.player-circle .captain-badge img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.player-label{
+  background:#111;
+  color:#fff;
+  font-size:clamp(13px,1.7vw,15px);   /* antes: clamp(10px,1.3vw,12px) */
+  font-weight:700;
+  padding:4px 10px;                    /* antes: 2px 8px */
+  border-radius:6px;
+  white-space:nowrap;
+}
+
+.squad-side{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.banner-heading{
+  background:linear-gradient(135deg,var(--tab-blue) 0%,var(--tab-blue-light) 100%);
+  color:var(--white);
+  font-weight:800;
+  font-size:clamp(24px,3vw,30px);   /* antes: clamp(17px,2.2vw,22px) */
+  text-align:center;
+  padding:14px;                        /* antes: 10px */
+  border-radius:10px;
+}
+
+.kits-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.kits-row img{
+  width:clamp(100px,30vw,200px);   /* antes: clamp(60px,9vw,92px) */
+  height:300px;
+  object-fit:contain;
+}
+
+.subs-block{
+  text-align:left;
+}
+.subs-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+}
+.coach-line{
+  font-weight:700;
+  margin:4px 0 10px;
+  font-size:clamp(18px,2.3vw,22px);   /* antes: clamp(16px,2vw,19px) */
+}
+
+.subs-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:9px;                              /* antes: 7px */
+  font-size:clamp(18px,2.5vw,24px);   /* antes: clamp(16px,2vw,19px) */
+}
+
+.trophy-wrap{
+  flex:none;
+  margin-top:0;
+  margin-right:100px;         /* antes: margin-top:auto; */
+}
+
+
+
+.trophy-wrap img{
+  max-width:170px;      /* tamaño real cuando hay 1 solo trofeo */
+  height:auto;
+}
+
+/* ---------- Footer ---------- */
+
+.footer{
+  background:linear-gradient(100deg,var(--purple-950) 0%,var(--purple-900) 100%);
+  color:var(--white);
+  padding:10px clamp(20px,5vw,25px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:18px;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.footer .footer-left{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.footer .footer-left img{
+  height:15px;
+  width:auto;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+
+.footer .footer-brands{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.footer .footer-brands img{
+  height:25px;
+  width:auto;
+  object-fit:contain;
+}
+
+.footer .footer-right{
+  opacity:.85;
+}
+
+/* ---------- Responsive extra ---------- */
+
+@media (max-width:560px){
+  .header nav{
+    gap:16px;
+  }
+  .footer{
+    justify-content:center;
+    text-align:center;
+  }
+}
