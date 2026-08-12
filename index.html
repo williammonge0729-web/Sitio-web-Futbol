@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Premier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+ 
+    <div class="canvas-wrapper">
+        
+        <header class="navbar">
+            <div class="nav-left">
+                <div class="img-brand-logo">
+                    <img src="assets/Captura de pantalla 2026-07-28 140826.png" alt="Mundo Premier" class="brand-logo-img">
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#" class="active" data-view="inicio" id="nav-inicio">Inicio</a></li>
+                        <li><a href="#" data-view="estadisticas" id="nav-estadisticas">Estadísticas</a></li>
+                        <li><a href="#" data-view="posiciones" id="nav-posiciones">Posiciones</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <span class="league-title"></span>
+                <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League" class="league-icon">
+            </div>
+        </header>
+ 
+        <main class="dashboard-grid">
+            
+            <section class="col-left standard-col-height">
+                <div class="card-champion" data-panel="inicio">
+                    <div class="photo-frame">
+                        <img src="https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=500" class="photo-img" alt="Celebración">
+                    </div>
+                    <div class="banner-champion">
+                        <h2>CAMPEONES</h2>
+                        <h2>2025/26</h2>
+                    </div>
+                    <div class="badge-champion-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" class="badge-lg" alt="Arsenal">
+                    </div>
+                </div>
+ 
+                <div class="card-info-extra gold-theme" data-panel="inicio">
+                    <h4 class="extra-title">DATOS DEL CAMPEÓN</h4>
+                    <ul class="extra-list">
+                        <li><strong>Títulos totales:</strong> <span>14</span></li>
+                        <li><strong>Rendimiento:</strong> <span>74.5%</span></li>
+                        <li><strong>Goles a Favor:</strong> <span>88</span></li>
+                        <li><strong>Vallas Invictas:</strong> <span>16</span></li>
+                    </ul>
+                </div>
+ 
+                <div class="card-info-extra gold-theme" data-panel="estadisticas">
+                    <h4 class="extra-title">MÁXIMOS GOLEADORES</h4>
+                    <ul class="extra-list">
+                        <li><strong>1. E. Haaland (MCI):</strong> <span>27 Goles</span></li>
+                        <li><strong>2. B. Saka (ARS):</strong> <span>21 Goles</span></li>
+                        <li><strong>3. M. Salah (LIV):</strong> <span>19 Goles</span></li>
+                    </ul>
+                </div>
+            </section>
+ 
+            <section class="col-center">
+                <div class="table-responsive" data-panel="inicio posiciones">
+                    <table class="leaderboard-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="text-left">Club</th>
+                                <th>PJ</th>
+                                <th>G</th>
+                                <th>E</th>
+                                <th>D</th>
+                                <th>DG</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td class="team-identity"><a href="arsenal1.html" class="arsenal1.html"><img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" class="team-mini-badge"> Arsenal</a></td><td>38</td><td>26</td><td>7</td><td>5</td><td>39</td><td class="fw-bold">85</td></tr>
+                            <tr><td>2</td><td class="team-identity"><a href="man-city2.html" class="team-link"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Manchester_City_FC_badge.svg" class="team-mini-badge"> Manchester City</a></td><td>38</td><td>23</td><td>7</td><td>5</td><td>32</td><td class="fw-bold">61</td></tr>
+                            <tr><td>3</td><td class="team-identity"><a href="Man United3.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" class="team-mini-badge"> Manchester United</a></td><td>38</td><td>20</td><td>9</td><td>6</td><td>13</td><td class="fw-bold">54</td></tr>
+                            <tr><td>4</td><td class="team-identity"><a href="aston-villa4.html" class="team-link"><img src="assets/Aston_Villa.svg.webp" class="team-mini-badge"> Aston Villa</a></td><td>38</td><td>19</td><td>6</td><td>9</td><td>3</td><td class="fw-bold">51</td></tr>
+                            <tr><td>5</td><td class="team-identity"><a href="liverpool5.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" class="team-mini-badge"> Liverpool</a></td><td>38</td><td>17</td><td>7</td><td>9</td><td>9</td><td class="fw-bold">49</td></tr>
+                            <tr><td>6</td><td class="team-identity"><a href="bournemouth6.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg" class="team-mini-badge"> Bournemouth</a></td><td>38</td><td>13</td><td>9</td><td>8</td><td>-2</td><td class="fw-bold">48</td></tr>
+                            <tr><td>7</td><td class="team-identity"><a href="sunderland7.html" class="team-link"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Logo_Sunderland.svg" class="team-mini-badge"> Sunderland AFC</a></td><td>38</td><td>10</td><td>10</td><td>10</td><td>-5</td><td class="fw-bold">40</td></tr>
+                            <tr><td>8</td><td class="team-identity"><a href="brighton8.html" class="team-link"><img src="assets/Brighton_&_Hove_Albion_logo.svg.webp" class="team-mini-badge"> Brighton</a></td><td>38</td><td>10</td><td>10</td><td>10</td><td>3</td><td class="fw-bold">40</td></tr>
+                            <tr><td>9</td><td class="team-identity"><a href="Brentford9.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg" class="team-mini-badge"> Brentford</a></td><td>38</td><td>13</td><td>18</td><td>7</td><td>4</td><td class="fw-bold">45</td></tr>
+                            <tr><td>10</td><td class="team-identity"><a href="chelsea10.html" class="team-link"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Chelsea_FC.svg" class="team-mini-badge"> Chelsea</a></td><td>38</td><td>9</td><td>14</td><td>11</td><td>18</td><td class="fw-bold">41</td></tr>
+                            <tr><td>11</td><td class="team-identity"><a href="fulham.html" class="team-link"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Fulham_FC_(shield).svg" class="team-mini-badge"> Fulham</a></td><td>38</td><td>12</td><td>5</td><td>13</td><td>-3</td><td class="fw-bold">41</td></tr>
+                            <tr><td>12</td><td class="team-identity"><a href="everton.html" class="team-link"><img src="assets/Everton_FC_logo.svg.webp" class="team-mini-badge"> Everton</a></td><td>38</td><td>12</td><td>7</td><td>11</td><td>-1</td><td class="fw-bold">43</td></tr>
+                            <tr><td>13</td><td class="team-identity"><a href="newcastle.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg" class="team-mini-badge"> Newcastle</a></td><td>38</td><td>12</td><td>7</td><td>11</td><td>-1</td><td class="fw-bold">43</td></tr>
+                            <tr><td>14</td><td class="team-identity"><a href="crystal-palace.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg" class="team-mini-badge"> Crystal Palace</a></td><td>38</td><td>10</td><td>9</td><td>11</td><td>-2</td><td class="fw-bold">39</td></tr>
+                            <tr><td>15</td><td class="team-identity"><a href="leeds.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg" class="team-mini-badge"> Leeds</a></td><td>38</td><td>7</td><td>11</td><td>12</td><td>-11</td><td class="fw-bold">32</td></tr>
+                            <tr><td>16</td><td class="team-identity"><a href="tottenham.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg" class="team-mini-badge"> Tottenham</a></td><td>38</td><td>7</td><td>9</td><td>14</td><td>-7</td><td class="fw-bold">30</td></tr>
+                            <tr><td>17</td><td class="team-identity"><a href="nottingham-forest.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg" class="team-mini-badge"> Nottingham Forest</a></td><td>38</td><td>7</td><td>8</td><td>15</td><td>-15</td><td class="fw-bold">29</td></tr>
+                            <tr><td>18</td><td class="team-identity"><a href="west-ham.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg" class="team-mini-badge"> West Ham</a></td><td>38</td><td>7</td><td>8</td><td>15</td><td>-19</td><td class="fw-bold">29</td></tr>
+                            <tr><td>19</td><td class="team-identity"><a href="burnley.html" class="team-link"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Burnley_FC_Logo.svg" class="team-mini-badge"> Burnley</a></td><td>38</td><td>4</td><td>8</td><td>18</td><td>-26</td><td class="fw-bold">20</td></tr>
+                            <tr><td>20</td><td class="team-identity"><a href="wolves.html" class="team-link"><img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg" class="team-mini-badge"> Wolves</a></td><td>38</td><td>3</td><td>8</td><td>20</td><td>-30</td><td class="fw-bold">17</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="col-right standard-col-height">
+                <div class="card-info-extra fuchsia-theme" data-panel="inicio posiciones">
+                    <h4 class="extra-title">ASCENDIDOS 2026/27</h4>
+ 
+                    <div class="ascended-row">
+                        <div class="ascended-team">
+                            <img src="assets/Coventry_City_FC_crest.svg" class="team-mini-badge" alt="Coventry City">
+                            <span>Coventry City</span>
+                        </div>
+                        <span class="arrow-green">▲</span>
+                    </div>
+ 
+                    <div class="ascended-row">
+                        <div class="ascended-team">
+                            <img src="assets/Ipswich_Town.svg" class="team-mini-badge" alt="Ipswich Town">
+                            <span>Ipswich Town</span>
+                        </div>
+                        <span class="arrow-green">▲</span>
+                    </div>
+ 
+                    <div class="ascended-row">
+                        <div class="ascended-team">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/5/54/Hull_City_A.F.C._logo.svg" class="team-mini-badge" alt="Hull City">
+                            <span>Hull City</span>
+                        </div>
+                        <span class="arrow-green">▲</span>
+                    </div>
+                </div>
+                <div class="card-info-extra fuchsia-theme" data-panel="inicio estadisticas">
+                    <h4 class="extra-title">DATOS DE TEMPORADA</h4>
+                    <ul class="extra-list">
+                        <li><strong>Partidos Jugados:</strong> <span>380</span></li>
+                        <li><strong>Goles Totales:</strong> <span>1,084</span></li>
+                        <li><strong>Promedio Goles:</strong> <span>2.85</span></li>
+                        <li><strong>Bota de Oro:</strong> <span>E. Haaland (27)</span></li>
+                    </ul>
+                </div>
+ 
+                <div class="card-info-extra fuchsia-theme" data-panel="inicio estadisticas">
+                    <h4 class="extra-title">ASISTENCIAS Y PORTEROS</h4>
+                    <ul class="extra-list">
+                        <li><strong>K. De Bruyne (MCI):</strong> <span>15 Asist.</span></li>
+                        <li><strong>M. Ødegaard (ARS):</strong> <span>12 Asist.</span></li>
+                        <li><strong>David Raya (ARS):</strong> <span>16 Imbat.</span></li>
+                    </ul>
+                </div>
+            </section>
+ 
+        </main>
+ 
+        <footer class="footer-bar">
+            <span class="footer-email">mundopremieroficial@gmail.com</span>
+            <div class="footer-brands">
+                 <i class="fab fa-medium brand-icon-fa" title="Medium"></i>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Electronic_Arts_logo_black.svg" class="brand-icon-img" title="EA">
+                <img src="assets/BCS-745d30bf.png" class="brand-icon-img" title="Barclays">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Coca-Cola_logo.svg" class="brand-icon-img" title="Coca-Cola">
+                <img src="assets/The-Return-of-the-Iconic-Puma-1978-%E2%80%93-1980-300x169.png" class="brand-icon-img" title="Puma">
+                <img src="assets/Microsoft_icon.svg.webp" class="brand-icon-img" title="Microsoft">
+                <img src="assets/Adobe_Corporate_logo.svg.webp" class="brand-icon-img" title="Adobe">
+            </div>
+            <span class="footer-copyright">© Todos los Derechos reservados MundoPremier.com 2026</span>
+        </footer>
+      
+    </div>
+ 
+</body>
+</html>
